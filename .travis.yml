@@ -36,18 +36,12 @@ after_script:
   - node-pre-gyp configure
   - node-pre-gyp build package --target_arch=ia32
 
-# Need S3 Upload for Artifacts
-# addons:
-#   artifacts:
-#     debug: true
-#     paths:
-#     - ./build/stage/**/*.tar.gz
-
 git:
   depth: 1
 branches:
   only:
     - master
+    - test
 
 os:
   - linux
